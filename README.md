@@ -1,3 +1,3 @@
 #Aula Java.
 
-Aqui irei guarda alguns exercícios e projetos academicos.
+Aqui irei guardar alguns exercícios e projetos academicos.
