@@ -1,6 +1,6 @@
 package exerciciopfpj;
 
-import java.io.PrintStream;
+
 import javax.swing.JOptionPane;
 
 public class ExercicioPFPJ {
