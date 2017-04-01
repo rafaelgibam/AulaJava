@@ -1,6 +1,7 @@
 
-package CadastroPessoas;
+package Produtos;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Principal {
@@ -8,32 +9,36 @@ public class Principal {
    
     public static void main(String[] args) {
         
+        ArrayList <Produto> listaProd = new ArrayList <Produto>();
+        String nome;
+        int resp, cod;
         
-        Pessoa vp[];
+        Produto prod; 
+       
         
-        vp = new Pessoa[2];
+        do{
+           cod = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o codigo do Produto:"));
+           nome = JOptionPane.showInputDialog(null,"Digite o nome do Produto:");
         
-        for(int i = 0 ; i < 2 ; i++){
+           prod = new Produto(cod,nome);
+           listaProd.add(prod);
+           resp = Integer.parseInt(JOptionPane.showInputDialog(null,"Deseja cadastra mais produtos? Sim = 1 / Não = 0"));
+           
+        }while(resp == 1);
+        
+        for(int i = 0 ; i < listaProd.size() ; i++){
             
-            Pessoa p = new Pessoa();
-            p.nome = JOptionPane.showInputDialog("Qual é seu nome? ");
-            p.cpf = Long.parseLong(JOptionPane.showInputDialog("Diga-me seu Cpf: "));
-            p.dataNasc = Integer.parseInt(JOptionPane.showInputDialog("Que ano você Nasceu?"));
-            p.endereco = JOptionPane.showInputDialog("Onde você mora? ");
-            
-            vp[i] = p;
-            JOptionPane.showMessageDialog(null,
-                    
-                    "Nome: "            +   vp[i].nome + "\n" + 
-                    "Cpf: "             +   vp[i].cpf + "\n" +
-                    "Data Nascimento: " +   vp[i].dataNasc + "\n" + 
-                    "Endereço: "        +   vp[i].endereco
+            prod = listaProd.get(i);
+            System.out.println(
+                
+                "Codigo: " + prod.cod + "\n" +
+                "Nome: " + prod.nome +"\n"
                     
             );
-         
-          
+            
         }
-    
+        
+       
     }
     
 }
